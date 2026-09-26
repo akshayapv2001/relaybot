@@ -6,8 +6,8 @@ It uses Discord's **HTTP Interactions Endpoint** (no gateway connection): Discor
 
 | | |
 |---|---|
-| **Live app** | `https://<your-app>.onrender.com` *(fill in after deploying)* |
-| **Admin login** | username `<fill in>` / password `<fill in>` (throwaway account for reviewers) |
+| **Live app** | `https://relaybot-7a8u.onrender.com` |
+| **Admin login** | username `admin@yopmail.com` / password configured via `ADMIN_PASSWORD` env var |
 | **Add the bot to a server** | Sign in, open **Servers**, choose **Connect a server** |
 | **Stack** | Spring Boot 3.3 (Java 21), Angular 20, Postgres (Neon), Groq, Render. All free tiers, no card. |
 
