@@ -1,0 +1,17 @@
+# secrets
+.env
+*.env.local
+
+# build output
+backend/target/
+backend/src/main/resources/static/
+frontend/dist/
+frontend/.angular/
+frontend/node_modules/
+node_modules/
+
+# editors / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store

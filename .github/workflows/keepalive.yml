@@ -1,0 +1,18 @@
+# Render's free web service sleeps after 15 minutes without traffic, and a cold start takes
+# longer than Discord's 3-second window. This pings /healthz (which does not touch the
+# database) every 10 minutes. Set the repository variable RELAYBOT_URL to your Render URL.
+# GitHub can delay scheduled runs; cron-job.org (free) is a more punctual alternative.
+name: keep-alive
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    if: ${{ vars.RELAYBOT_URL != '' }}
+    steps:
+      - name: Ping health endpoint
+        run: curl -fsS --retry 3 --retry-delay 20 --max-time 90 "${{ vars.RELAYBOT_URL }}/healthz"

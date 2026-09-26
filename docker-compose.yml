@@ -1,0 +1,14 @@
+# Local Postgres for development: docker compose up -d
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: relaybot
+      POSTGRES_USER: relaybot
+      POSTGRES_PASSWORD: relaybot
+    ports:
+      - "5432:5432"
+    volumes:
+      - relaybot-db:/var/lib/postgresql/data
+volumes:
+  relaybot-db:
